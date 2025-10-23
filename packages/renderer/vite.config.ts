@@ -11,10 +11,16 @@ export default defineConfig({
 
   // Build output directory for Tauri
   build: {
-    outDir: '../../dist/renderer',
+    outDir: 'dist',
     emptyOutDir: true,
     rollupOptions: {
       input: path.resolve(__dirname, 'index.html'),
+      external: [
+        '@tauri-apps/api',
+        '@tauri-apps/plugin-shell',
+        '@tauri-apps/plugin-dialog',
+        '@tauri-apps/plugin-fs',
+      ],
     },
   },
 
