@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "identifier": "com.nodeflow.app",
   "build": {
-    "beforeDevCommand": "cd packages/renderer && vite",
-    "beforeBuildCommand": "npm run build",
+    "beforeDevCommand": "cd packages/renderer && npm run dev",
+    "beforeBuildCommand": "cd packages/renderer && npm run build",
     "devUrl": "http://localhost:5173",
-    "frontendDist": "../dist/renderer"
+    "frontendDist": "../packages/renderer/dist"
   },
   "bundle": {
-    "active": false,
-    "targets": ["dmg", "app"],
+    "active": true,
+    "targets": "all",
     "icon": [],
     "windows": {
       "certificateThumbprint": null,
