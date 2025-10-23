@@ -1,0 +1,70 @@
+{
+  "app": {
+    "name": "NodeFlow",
+    "tagline": "La mindmap sans abonnement. Belle, fluide, 100 % hors-ligne."
+  },
+  "menu": {
+    "file": "Fichier",
+    "new": "Nouveau",
+    "open": "Ouvrir",
+    "save": "Enregistrer",
+    "saveAs": "Enregistrer sous...",
+    "export": "Exporter",
+    "quit": "Quitter"
+  },
+  "toolbar": {
+    "new": "Nouvelle carte",
+    "open": "Ouvrir",
+    "save": "Enregistrer",
+    "undo": "Annuler",
+    "redo": "Refaire",
+    "search": "Rechercher",
+    "theme": "Thème",
+    "export": "Exporter"
+  },
+  "node": {
+    "new": "Nouveau nœud",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "addChild": "Ajouter un enfant",
+    "addSibling": "Ajouter un frère"
+  },
+  "search": {
+    "placeholder": "Rechercher dans la carte...",
+    "results": "{{count}} résultat(s)",
+    "noResults": "Aucun résultat",
+    "next": "Suivant",
+    "previous": "Précédent"
+  },
+  "theme": {
+    "light": "Clair",
+    "dark": "Sombre",
+    "sepia": "Sépia",
+    "slate": "Ardoise"
+  },
+  "export": {
+    "png": "Exporter en PNG",
+    "svg": "Exporter en SVG",
+    "pdf": "Exporter en PDF"
+  },
+  "messages": {
+    "saved": "Carte enregistrée",
+    "opened": "Carte ouverte",
+    "exported": "Exportation réussie",
+    "error": "Une erreur est survenue",
+    "unsavedChanges": "Modifications non enregistrées"
+  },
+  "shortcuts": {
+    "title": "Raccourcis clavier",
+    "enter": "Nouveau nœud frère",
+    "tab": "Nouveau nœud enfant",
+    "delete": "Supprimer le nœud",
+    "undo": "Annuler",
+    "redo": "Refaire",
+    "save": "Enregistrer",
+    "search": "Rechercher",
+    "zoom": "Ctrl/Cmd + Molette",
+    "pan": "Espace + Drag",
+    "recenter": "Recentrer"
+  }
+}

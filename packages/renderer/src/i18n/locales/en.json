@@ -1,0 +1,70 @@
+{
+  "app": {
+    "name": "NodeFlow",
+    "tagline": "Mind mapping without subscription. Beautiful, smooth, 100% offline."
+  },
+  "menu": {
+    "file": "File",
+    "new": "New",
+    "open": "Open",
+    "save": "Save",
+    "saveAs": "Save As...",
+    "export": "Export",
+    "quit": "Quit"
+  },
+  "toolbar": {
+    "new": "New Map",
+    "open": "Open",
+    "save": "Save",
+    "undo": "Undo",
+    "redo": "Redo",
+    "search": "Search",
+    "theme": "Theme",
+    "export": "Export"
+  },
+  "node": {
+    "new": "New Node",
+    "edit": "Edit",
+    "delete": "Delete",
+    "addChild": "Add Child",
+    "addSibling": "Add Sibling"
+  },
+  "search": {
+    "placeholder": "Search in map...",
+    "results": "{{count}} result(s)",
+    "noResults": "No results",
+    "next": "Next",
+    "previous": "Previous"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "sepia": "Sepia",
+    "slate": "Slate"
+  },
+  "export": {
+    "png": "Export as PNG",
+    "svg": "Export as SVG",
+    "pdf": "Export as PDF"
+  },
+  "messages": {
+    "saved": "Map saved",
+    "opened": "Map opened",
+    "exported": "Export successful",
+    "error": "An error occurred",
+    "unsavedChanges": "Unsaved changes"
+  },
+  "shortcuts": {
+    "title": "Keyboard Shortcuts",
+    "enter": "New sibling node",
+    "tab": "New child node",
+    "delete": "Delete node",
+    "undo": "Undo",
+    "redo": "Redo",
+    "save": "Save",
+    "search": "Search",
+    "zoom": "Ctrl/Cmd + Wheel",
+    "pan": "Space + Drag",
+    "recenter": "Recenter"
+  }
+}

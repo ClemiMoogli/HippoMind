@@ -1,0 +1,130 @@
+{
+  "hero": {
+    "title": "Vos Cartes Mentales,",
+    "titleHighlight": "100% Hors Ligne",
+    "subtitle": "L'application de mind mapping qui respecte votre vie privée. Pas d'abonnement, pas de cloud, juste vous et vos idées.",
+    "cta": "Télécharger Gratuitement",
+    "price": "Achat unique : 19€",
+    "available": "Disponible pour macOS, Windows et Linux"
+  },
+  "features": {
+    "title": "Tout Ce Dont Vous Avez Besoin",
+    "subtitle": "Mind mapping professionnel sans compromis",
+    "offline": {
+      "title": "100% Hors Ligne",
+      "description": "Toutes vos données restent sur votre ordinateur. Aucune connexion Internet requise."
+    },
+    "performance": {
+      "title": "Ultra Rapide",
+      "description": "Canvas fluide à 60fps. Gérez jusqu'à 2 000 nœuds sans effort."
+    },
+    "privacy": {
+      "title": "Confidentialité Totale",
+      "description": "Pas de télémétrie, pas de suivi, pas de collecte de données. Vos idées restent vôtres."
+    },
+    "themes": {
+      "title": "4 Thèmes Magnifiques",
+      "description": "Clair, Sombre, Sépia et Ardoise. Choisissez ce qui correspond à votre flux de travail."
+    },
+    "autosave": {
+      "title": "Ne Perdez Jamais Votre Travail",
+      "description": "Sauvegardes automatiques toutes les 30 secondes avec backups horodatés."
+    },
+    "shortcuts": {
+      "title": "Clavier d'Abord",
+      "description": "Plus de 12 raccourcis pour les utilisateurs avancés. Travaillez à la vitesse de la pensée."
+    },
+    "multilingual": {
+      "title": "Multilingue",
+      "description": "Interfaces en français et en anglais. Plus de langues à venir."
+    },
+    "unlimited": {
+      "title": "Annuler/Refaire Illimité",
+      "description": "Expérimentez librement. Revenez en arrière quand vous le souhaitez."
+    },
+    "dragdrop": {
+      "title": "Glisser-Déposer",
+      "description": "Manipulation intuitive des nœuds. Organisez vos pensées naturellement."
+    }
+  },
+  "demo": {
+    "title": "Voyez-Le En Action",
+    "subtitle": "Beau, intuitif, puissant"
+  },
+  "pricing": {
+    "title": "Tarification Simple et Équitable",
+    "subtitle": "Pas d'abonnements. Pas de frais cachés. Juste un paiement.",
+    "lifetime": "Licence à Vie",
+    "price": "19€",
+    "priceEur": "19€",
+    "features": [
+      "Toutes les fonctionnalités actuelles incluses",
+      "Toutes les mises à jour futures gratuites",
+      "macOS, Windows et Linux",
+      "Aucun abonnement jamais",
+      "Support premium",
+      "Garantie satisfait ou remboursé 30 jours"
+    ],
+    "cta": "Obtenir NodeFlow Maintenant",
+    "comparison": {
+      "title": "vs. La Concurrence",
+      "others": "Autres Apps",
+      "subscription": "Abonnement",
+      "perMonth": "10-20€/mois",
+      "cloud": "Basé sur le cloud",
+      "tracking": "Télémétrie et suivi",
+      "internet": "Internet requis"
+    }
+  },
+  "downloads": {
+    "title": "Télécharger NodeFlow",
+    "subtitle": "Choisissez votre plateforme",
+    "mac": "macOS",
+    "macDescription": "Apple Silicon et Intel",
+    "windows": "Windows",
+    "windowsDescription": "Installateur 64-bit",
+    "linux": "Linux",
+    "linuxDescription": "AppImage et .deb"
+  },
+  "faq": {
+    "title": "Questions Fréquentes",
+    "q1": {
+      "question": "Est-ce vraiment un paiement unique ?",
+      "answer": "Oui ! Payez une fois, utilisez pour toujours. Toutes les mises à jour futures incluses sans frais supplémentaires."
+    },
+    "q2": {
+      "question": "Fonctionne-t-il hors ligne ?",
+      "answer": "Absolument. NodeFlow fonctionne 100% hors ligne. Aucune connexion Internet requise, jamais."
+    },
+    "q3": {
+      "question": "Qu'en est-il de mes données ?",
+      "answer": "Vos données ne quittent jamais votre ordinateur. Tout est stocké localement. Zéro télémétrie, zéro suivi."
+    },
+    "q4": {
+      "question": "Puis-je l'utiliser sur plusieurs ordinateurs ?",
+      "answer": "Oui ! Votre licence fonctionne sur tous vos appareils (macOS, Windows, Linux)."
+    },
+    "q5": {
+      "question": "Et si j'ai besoin d'aide ?",
+      "answer": "Support premium par email inclus. Nous répondons généralement sous 24 heures."
+    },
+    "q6": {
+      "question": "Y a-t-il une politique de remboursement ?",
+      "answer": "Oui. Garantie satisfait ou remboursé de 30 jours, sans questions."
+    }
+  },
+  "footer": {
+    "tagline": "L'application de mind mapping qui respecte votre vie privée",
+    "product": "Produit",
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "download": "Télécharger",
+    "support": "Support",
+    "docs": "Documentation",
+    "contact": "Contact",
+    "legal": "Légal",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation",
+    "rights": "Tous droits réservés"
+  }
+}

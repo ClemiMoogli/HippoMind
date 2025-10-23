@@ -1,0 +1,130 @@
+{
+  "hero": {
+    "title": "Your Mind Maps,",
+    "titleHighlight": "100% Offline",
+    "subtitle": "The mind mapping app that respects your privacy. No subscription, no cloud, just you and your ideas.",
+    "cta": "Download for Free",
+    "price": "One-time purchase: $19",
+    "available": "Available for macOS, Windows & Linux"
+  },
+  "features": {
+    "title": "Everything You Need",
+    "subtitle": "Professional mind mapping without compromise",
+    "offline": {
+      "title": "100% Offline",
+      "description": "All your data stays on your computer. No internet required, ever."
+    },
+    "performance": {
+      "title": "Blazing Fast",
+      "description": "Smooth 60fps canvas. Handle up to 2,000 nodes effortlessly."
+    },
+    "privacy": {
+      "title": "Total Privacy",
+      "description": "No telemetry, no tracking, no data collection. Your ideas stay yours."
+    },
+    "themes": {
+      "title": "4 Beautiful Themes",
+      "description": "Light, Dark, Sepia, and Slate. Choose what fits your workflow."
+    },
+    "autosave": {
+      "title": "Never Lose Work",
+      "description": "Automatic saves every 30 seconds with timestamped backups."
+    },
+    "shortcuts": {
+      "title": "Keyboard First",
+      "description": "12+ shortcuts for power users. Work at the speed of thought."
+    },
+    "multilingual": {
+      "title": "Multilingual",
+      "description": "English and French interfaces. More languages coming soon."
+    },
+    "unlimited": {
+      "title": "Unlimited Undo/Redo",
+      "description": "Experiment freely. Go back in time whenever you need."
+    },
+    "dragdrop": {
+      "title": "Drag & Drop",
+      "description": "Intuitive node manipulation. Organize your thoughts naturally."
+    }
+  },
+  "demo": {
+    "title": "See It In Action",
+    "subtitle": "Beautiful, intuitive, powerful"
+  },
+  "pricing": {
+    "title": "Simple, Fair Pricing",
+    "subtitle": "No subscriptions. No hidden fees. Just one payment.",
+    "lifetime": "Lifetime License",
+    "price": "$19",
+    "priceEur": "€19",
+    "features": [
+      "All current features included",
+      "All future updates free",
+      "macOS, Windows & Linux",
+      "No subscription ever",
+      "Premium support",
+      "30-day money back guarantee"
+    ],
+    "cta": "Get NodeFlow Now",
+    "comparison": {
+      "title": "vs. The Competition",
+      "others": "Other Apps",
+      "subscription": "Subscription",
+      "perMonth": "$10-20/month",
+      "cloud": "Cloud-based",
+      "tracking": "Telemetry & tracking",
+      "internet": "Internet required"
+    }
+  },
+  "downloads": {
+    "title": "Download NodeFlow",
+    "subtitle": "Choose your platform",
+    "mac": "macOS",
+    "macDescription": "Apple Silicon & Intel",
+    "windows": "Windows",
+    "windowsDescription": "64-bit installer",
+    "linux": "Linux",
+    "linuxDescription": "AppImage & .deb"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": {
+      "question": "Is this really a one-time payment?",
+      "answer": "Yes! Pay once, use forever. All future updates included at no extra cost."
+    },
+    "q2": {
+      "question": "Does it work offline?",
+      "answer": "Absolutely. NodeFlow works 100% offline. No internet connection required, ever."
+    },
+    "q3": {
+      "question": "What about my data?",
+      "answer": "Your data never leaves your computer. Everything is stored locally. Zero telemetry, zero tracking."
+    },
+    "q4": {
+      "question": "Can I use it on multiple computers?",
+      "answer": "Yes! Your license works on all your devices (macOS, Windows, Linux)."
+    },
+    "q5": {
+      "question": "What if I need help?",
+      "answer": "Premium email support included. We typically respond within 24 hours."
+    },
+    "q6": {
+      "question": "Is there a refund policy?",
+      "answer": "Yes. 30-day money-back guarantee, no questions asked."
+    }
+  },
+  "footer": {
+    "tagline": "The mind mapping app that respects your privacy",
+    "product": "Product",
+    "features": "Features",
+    "pricing": "Pricing",
+    "download": "Download",
+    "support": "Support",
+    "docs": "Documentation",
+    "contact": "Contact",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "rights": "All rights reserved"
+  }
+}

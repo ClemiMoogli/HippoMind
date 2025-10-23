@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts for different themes */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@layer base {
+  body {
+    @apply antialiased;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  #root {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Theme-specific styles */
+
+  /* Light theme - Clean and modern with Inter */
+  .light {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9fafb;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --border-color: #e5e7eb;
+    --accent-color: #3b82f6;
+  }
+
+  /* Dark theme - Professional with Inter */
+  .dark {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    --bg-primary: #1f2937;
+    --bg-secondary: #111827;
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --border-color: #374151;
+    --accent-color: #60a5fa;
+  }
+
+  /* Sepia theme - Warm and readable with Lora (serif) */
+  .sepia {
+    font-family: 'Lora', Georgia, serif;
+    --bg-primary: #f5f1e8;
+    --bg-secondary: #ebe4d4;
+    --text-primary: #3d2f1f;
+    --text-secondary: #756a5a;
+    --border-color: #d4c4a8;
+    --accent-color: #a0826d;
+    background-color: #f5f1e8;
+    color: #3d2f1f;
+  }
+
+  /* Slate theme - Cool and elegant with IBM Plex Mono (monospace) */
+  .slate {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    --bg-primary: #1e293b;
+    --bg-secondary: #0f172a;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --border-color: #334155;
+    --accent-color: #38bdf8;
+    background-color: #1e293b;
+    color: #e2e8f0;
+  }
+
+  /* Apply theme colors to common elements */
+  .sepia .toolbar,
+  .sepia .canvas-container,
+  .sepia .properties-panel,
+  .sepia .bg-white {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+  }
+
+  .sepia .border-gray-200,
+  .sepia .border-gray-300 {
+    border-color: var(--border-color) !important;
+  }
+
+  .sepia .btn-icon:hover {
+    background-color: var(--bg-secondary) !important;
+  }
+
+  .sepia .text-gray-500,
+  .sepia .text-gray-600 {
+    color: var(--text-secondary) !important;
+  }
+
+  .slate .toolbar,
+  .slate .canvas-container,
+  .slate .properties-panel,
+  .slate .bg-white,
+  .slate .dark\:bg-gray-800 {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+  }
+
+  .slate .border-gray-200,
+  .slate .dark\:border-gray-700 {
+    border-color: var(--border-color) !important;
+  }
+
+  .slate .btn-icon:hover,
+  .slate .dark\:hover\:bg-gray-700:hover {
+    background-color: var(--bg-secondary) !important;
+  }
+
+  .slate .text-gray-900,
+  .slate .dark\:text-gray-100 {
+    color: var(--text-primary) !important;
+  }
+
+  .slate .text-gray-500,
+  .slate .dark\:text-gray-400 {
+    color: var(--text-secondary) !important;
+  }
+}
+
+@layer components {
+  /* Button styles */
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors duration-150;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700;
+    @apply focus:ring-blue-500;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-800 hover:bg-gray-300;
+    @apply dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600;
+    @apply focus:ring-gray-500;
+  }
+
+  .btn-icon {
+    @apply p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700;
+    @apply transition-colors duration-150;
+  }
+
+  /* Input styles */
+  .input {
+    @apply px-3 py-2 border rounded-lg;
+    @apply bg-white dark:bg-gray-800;
+    @apply border-gray-300 dark:border-gray-600;
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-500;
+  }
+
+  /* Toolbar */
+  .toolbar {
+    @apply flex items-center gap-2 py-2;
+    @apply bg-white dark:bg-gray-800;
+    @apply border-b border-gray-200 dark:border-gray-700;
+    /* Add extra padding on left for macOS window controls (traffic lights) */
+    padding-left: 80px;
+    padding-right: 1rem;
+    /* Enable dragging window from toolbar on macOS */
+    -webkit-app-region: drag;
+    /* Prevent toolbar from shrinking */
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    min-width: 800px;
+    overflow-x: auto;
+  }
+
+  /* Make toolbar buttons clickable (not draggable) */
+  .toolbar button,
+  .toolbar input,
+  .toolbar select,
+  .toolbar a {
+    -webkit-app-region: no-drag;
+  }
+
+  /* Canvas container */
+  .canvas-container {
+    @apply w-full h-full relative overflow-hidden;
+    @apply bg-gray-50 dark:bg-gray-900;
+  }
+
+  /* Properties panel */
+  .properties-panel {
+    @apply w-64 h-full bg-white dark:bg-gray-800;
+    @apply border-l border-gray-200 dark:border-gray-700;
+    @apply flex flex-col;
+  }
+}
+
+@layer utilities {
+  .focus-visible-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500;
+  }
+}
