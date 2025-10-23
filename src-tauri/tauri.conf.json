@@ -1,7 +1,7 @@
 {
   "productName": "NodeFlow",
   "version": "1.0.0",
-  "identifier": "com.nodeflow.app",
+  "identifier": "com.nodeflow.desktop",
   "build": {
     "beforeDevCommand": "cd packages/renderer && npm run dev",
     "beforeBuildCommand": "cd packages/renderer && npm run build",
