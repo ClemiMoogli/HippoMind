@@ -1,0 +1,21 @@
+{
+  "name": "nodeflow",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NodeFlow - Mind mapping app 100% offline",
+  "scripts": {
+    "dev": "npm run tauri:dev",
+    "build": "npm run build:frontend && npm run tauri:build",
+    "build:frontend": "cd packages/renderer && npm run build",
+    "tauri:dev": "cd packages/renderer && npm run dev",
+    "tauri:build": "cd packages/renderer && npm run tauri:build",
+    "dist:mac": "cd packages/renderer && npm run tauri:build -- --target universal-apple-darwin",
+    "dist:win": "cd packages/renderer && npm run tauri:build -- --target x86_64-pc-windows-msvc",
+    "dist:linux": "cd packages/renderer && npm run tauri:build -- --target x86_64-unknown-linux-gnu",
+    "install:all": "npm install && cd packages/renderer && npm install && cd ../shared && npm install && cd ../../landing && npm install"
+  },
+  "workspaces": [
+    "packages/*",
+    "landing"
+  ]
+}
