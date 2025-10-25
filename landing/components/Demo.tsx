@@ -61,80 +61,19 @@ export default function Demo() {
               </div>
             </div>
 
-            {/* App preview - Placeholder */}
-            <div className="aspect-video bg-gradient-to-br from-purple-900/20 to-blue-900/20 flex items-center justify-center relative">
-              {/* Animated nodes mockup */}
-              <svg className="w-full h-full" viewBox="0 0 800 450">
-                {/* Central node */}
-                <motion.g
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                  <circle cx="400" cy="225" r="50" fill="url(#gradient1)" />
-                  <text
-                    x="400"
-                    y="230"
-                    textAnchor="middle"
-                    fill="white"
-                    fontSize="16"
-                    fontWeight="bold"
-                  >
-                    Main Idea
-                  </text>
-                </motion.g>
-
-                {/* Connected nodes */}
-                {[
-                  { x: 250, y: 150, delay: 0.4, text: 'Node 1' },
-                  { x: 550, y: 150, delay: 0.5, text: 'Node 2' },
-                  { x: 250, y: 300, delay: 0.6, text: 'Node 3' },
-                  { x: 550, y: 300, delay: 0.7, text: 'Node 4' },
-                ].map((node, i) => (
-                  <motion.g
-                    key={i}
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
-                    transition={{ duration: 0.4, delay: node.delay }}
-                  >
-                    <line
-                      x1="400"
-                      y1="225"
-                      x2={node.x}
-                      y2={node.y}
-                      stroke="url(#gradient2)"
-                      strokeWidth="2"
-                      opacity="0.5"
-                    />
-                    <circle cx={node.x} cy={node.y} r="35" fill="url(#gradient3)" />
-                    <text
-                      x={node.x}
-                      y={node.y + 5}
-                      textAnchor="middle"
-                      fill="white"
-                      fontSize="14"
-                    >
-                      {node.text}
-                    </text>
-                  </motion.g>
-                ))}
-
-                {/* Gradients */}
-                <defs>
-                  <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#667eea" />
-                    <stop offset="100%" stopColor="#764ba2" />
-                  </linearGradient>
-                  <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#667eea" />
-                    <stop offset="100%" stopColor="#764ba2" />
-                  </linearGradient>
-                  <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#4facfe" />
-                    <stop offset="100%" stopColor="#00f2fe" />
-                  </linearGradient>
-                </defs>
-              </svg>
+            {/* App preview - Real demo GIF */}
+            <div className="aspect-video bg-gray-900 flex items-center justify-center relative overflow-hidden">
+              <motion.img
+                src="/demo.gif"
+                alt="HippoMind Demo - Mind mapping in action"
+                className="w-full h-full object-contain"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                loading="lazy"
+              />
+              {/* Loading placeholder */}
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20 -z-10" />
             </div>
           </div>
 
