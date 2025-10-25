@@ -24,7 +24,7 @@ Votre projet MindMap contient maintenant **2 parties indépendantes** :
    ↓
 3. Télécharge l'installateur (.dmg, .exe, .AppImage)
    ↓
-4. Installe NodeFlow (app desktop)
+4. Installe HippoMind (app desktop)
    ↓
 5. Lance l'app → WelcomeScreen.tsx s'affiche
    ↓
@@ -55,10 +55,10 @@ Dans `landing/components/Downloads.tsx`, pointer vers vos builds :
 
 ```tsx
 // Option 1 : GitHub Releases (gratuit)
-href="https://github.com/vous/localmind/releases/latest/download/NodeFlow-macOS.dmg"
+href="https://github.com/vous/localmind/releases/latest/download/HippoMind-macOS.dmg"
 
 // Option 2 : CDN personnalisé
-href="https://releases.localmind.app/v1.0.0/NodeFlow-macOS.dmg"
+href="https://releases.localmind.app/v1.0.0/HippoMind-macOS.dmg"
 
 // Option 3 : Vercel Blob Storage
 href="https://localmind.app/api/download/mac"
@@ -185,9 +185,9 @@ export async function GET(request: Request, { params }: { params: { platform: st
 
   // 2. Rediriger vers le vrai fichier
   const urls = {
-    mac: 'https://github.com/.../NodeFlow-macOS.dmg',
-    windows: 'https://github.com/.../NodeFlow-Windows.exe',
-    linux: 'https://github.com/.../NodeFlow-Linux.AppImage',
+    mac: 'https://github.com/.../HippoMind-macOS.dmg',
+    windows: 'https://github.com/.../HippoMind-Windows.exe',
+    linux: 'https://github.com/.../HippoMind-Linux.AppImage',
   };
 
   return Response.redirect(urls[params.platform]);
@@ -246,7 +246,7 @@ Retourne un JSON avec la dernière version :
 ```json
 {
   "version": "1.1.0",
-  "url": "https://releases.localmind.app/NodeFlow-1.1.0.dmg",
+  "url": "https://releases.localmind.app/HippoMind-1.1.0.dmg",
   "signature": "...",
   "notes": "- Nouvelle fonctionnalité X\n- Bug fix Y"
 }
@@ -282,7 +282,7 @@ Pour ouvrir l'app depuis la landing page :
 ```tsx
 // Landing page
 <a href="localmind://open?file=example.mindmap">
-  Open in NodeFlow
+  Open in HippoMind
 </a>
 ```
 

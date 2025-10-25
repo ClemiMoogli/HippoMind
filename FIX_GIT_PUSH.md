@@ -26,7 +26,7 @@ rm -rf dist-electron/
 
 # 3. Recommiter (les fichiers dans .gitignore seront ignorés)
 git add .
-git commit -m "Initial commit - NodeFlow app + landing page"
+git commit -m "Initial commit - HippoMind app + landing page"
 
 # 4. Push
 git push -u origin main
@@ -78,7 +78,7 @@ rm -rf packages/*/.next/
 # 4. Recréer le repo propre
 git init
 git add .
-git commit -m "Initial commit - NodeFlow app + landing page"
+git commit -m "Initial commit - HippoMind app + landing page"
 
 # 5. Connecter à GitHub
 git remote add origin https://github.com/ClemiMoogli/nodeflow.git
@@ -173,7 +173,7 @@ rm -rf packages/*/node_modules/
 # Recréer
 git init
 git add .
-git commit -m "Initial commit - NodeFlow app + landing page"
+git commit -m "Initial commit - HippoMind app + landing page"
 git remote add origin https://github.com/ClemiMoogli/nodeflow.git
 git branch -M main
 git push -f origin main

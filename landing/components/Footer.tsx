@@ -14,7 +14,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-2xl font-bold mb-4 gradient-text">
-              NodeFlow
+              HippoMind
             </h3>
             <p className="text-gray-400 mb-4">
               {t('tagline')}
@@ -104,7 +104,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © 2025 NodeFlow. {t('rights')}
+            © 2025 HippoMind. {t('rights')}
           </p>
           <div className="flex gap-6 text-sm">
             <a

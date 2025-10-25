@@ -2,7 +2,7 @@
 
 ## Vue d'ensemble
 
-NodeFlow est un **achat unique à 19€/$19**. Vous avez besoin d'un système pour :
+HippoMind est un **achat unique à 19€/$19**. Vous avez besoin d'un système pour :
 1. Accepter les paiements
 2. Générer des licences uniques
 3. Valider les licences dans l'app
@@ -33,7 +33,7 @@ NodeFlow est un **achat unique à 19€/$19**. Vous avez besoin d'un système po
 
 2. **Créer un produit** :
    - Type : "Digital Product"
-   - Nom : "NodeFlow - Mind Mapping App"
+   - Nom : "HippoMind - Mind Mapping App"
    - Prix : 19€ ou $19
    - Description : Copiez depuis `messages/en.json` → `pricing.features`
 
@@ -54,7 +54,7 @@ NodeFlow est un **achat unique à 19€/$19**. Vous avez besoin d'un système po
   href="https://votreusername.gumroad.com/l/nodeflow"
   className="block w-full py-4 px-6 text-center bg-gradient-to-r from-blue-600 to-purple-600..."
 >
-  {t('cta')} {/* "Get NodeFlow Now" */}
+  {t('cta')} {/* "Get HippoMind Now" */}
 </a>
 ```
 
@@ -119,7 +119,7 @@ Très similaire à Gumroad :
 
 ```tsx
 <a href="https://votrestore.lemonsqueezy.com/buy/product-id">
-  Get NodeFlow Now
+  Get HippoMind Now
 </a>
 ```
 
@@ -175,11 +175,11 @@ const response = await fetch(
 
 2. **Créer un produit** :
    - Dashboard → Products → Add Product
-   - Nom : "NodeFlow License"
+   - Nom : "HippoMind License"
    - Prix : 19€
 
 3. **Créer une Payment Page** :
-   - Products → NodeFlow → Payment Links
+   - Products → HippoMind → Payment Links
    - Create link
    - URL : `https://buy.stripe.com/xxxxx`
 
@@ -219,7 +219,7 @@ Landing page button :
     window.location.href = url;
   }}
 >
-  Get NodeFlow Now
+  Get HippoMind Now
 </button>
 ```
 
@@ -332,7 +332,7 @@ export function LicenseActivation() {
 
   return (
     <div className="license-dialog">
-      <h2>Activate NodeFlow</h2>
+      <h2>Activate HippoMind</h2>
       <input
         type="text"
         value={key}
@@ -367,7 +367,7 @@ useEffect(() => {
 
 ### Offline-first
 
-**Important** : NodeFlow est offline-first. La validation doit être **une seule fois** :
+**Important** : HippoMind est offline-first. La validation doit être **une seule fois** :
 
 1. User achète → Reçoit clé par email
 2. User entre la clé dans l'app → Validation online
@@ -426,7 +426,7 @@ Passez à Stripe/LemonSqueezy quand :
 ```
 1. User visite landing page
    ↓
-2. Clique "Get NodeFlow Now" (19€)
+2. Clique "Get HippoMind Now" (19€)
    ↓
 3. Redirigé vers Gumroad/Stripe
    ↓
@@ -436,7 +436,7 @@ Passez à Stripe/LemonSqueezy quand :
    - Clé de licence : NF-XXXX-XXXX-XXXX
    - Liens de téléchargement
    ↓
-6. Télécharge et installe NodeFlow
+6. Télécharge et installe HippoMind
    ↓
 7. Lance l'app → Écran "Enter license"
    ↓

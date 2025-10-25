@@ -4,7 +4,7 @@
     "titleHighlight": "100% Hors Ligne",
     "subtitle": "L'application de mind mapping qui respecte votre vie privée. Pas d'abonnement, pas de cloud, juste vous et vos idées.",
     "cta": "Télécharger Gratuitement",
-    "price": "Achat unique : 19€",
+    "price": "Achat unique : 19$ HT + taxes",
     "available": "Disponible pour macOS, Windows et Linux"
   },
   "features": {
@@ -55,8 +55,9 @@
     "title": "Tarification Simple et Équitable",
     "subtitle": "Pas d'abonnements. Pas de frais cachés. Juste un paiement.",
     "lifetime": "Licence à Vie",
-    "price": "19€",
-    "priceEur": "19€",
+    "price": "19$",
+    "priceEur": "19$",
+    "priceNote": "HT + taxes",
     "features": [
       "Toutes les fonctionnalités actuelles incluses",
       "Toutes les mises à jour futures gratuites",
@@ -65,7 +66,7 @@
       "Support premium",
       "Garantie satisfait ou remboursé 30 jours"
     ],
-    "cta": "Obtenir NodeFlow Maintenant",
+    "cta": "Obtenir HippoMind Maintenant",
     "comparison": {
       "title": "vs. La Concurrence",
       "others": "Autres Apps",
@@ -77,7 +78,7 @@
     }
   },
   "downloads": {
-    "title": "Télécharger NodeFlow",
+    "title": "Télécharger HippoMind",
     "subtitle": "Choisissez votre plateforme",
     "mac": "macOS",
     "macDescription": "Apple Silicon et Intel",
@@ -94,7 +95,7 @@
     },
     "q2": {
       "question": "Fonctionne-t-il hors ligne ?",
-      "answer": "Absolument. NodeFlow fonctionne 100% hors ligne. Aucune connexion Internet requise, jamais."
+      "answer": "Absolument. HippoMind fonctionne 100% hors ligne. Aucune connexion Internet requise, jamais."
     },
     "q3": {
       "question": "Qu'en est-il de mes données ?",

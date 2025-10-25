@@ -1,8 +1,8 @@
 {
-  "name": "nodeflow",
+  "name": "hippomind",
   "version": "1.0.0",
   "private": true,
-  "description": "NodeFlow - Mind mapping app 100% offline",
+  "description": "HippoMind - Mind mapping app 100% offline",
   "scripts": {
     "dev": "npm run tauri:dev",
     "build": "npm run build:frontend && npm run tauri:build",

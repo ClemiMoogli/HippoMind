@@ -1,6 +1,6 @@
-# NodeFlow Landing Page
+# HippoMind Landing Page
 
-Landing page moderne et dynamique pour NodeFlow - l'application de mind mapping 100% offline.
+Landing page moderne et dynamique pour HippoMind - l'application de mind mapping 100% offline.
 
 ## 🚀 Fonctionnalités
 
@@ -117,7 +117,7 @@ const nextConfig: NextConfig = {
 
 ## 🔗 Liens
 
-- **App Desktop**: `../packages` (NodeFlow application)
+- **App Desktop**: `../packages` (HippoMind application)
 - **Documentation**: Voir `/docs` à la racine du projet
 
 ## 📝 TODO
@@ -131,4 +131,4 @@ const nextConfig: NextConfig = {
 
 ## 📄 Licence
 
-Propriétaire - NodeFlow © 2025
+Propriétaire - HippoMind © 2025

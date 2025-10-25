@@ -1,4 +1,4 @@
-# 🚀 Quick Release Guide - NodeFlow
+# 🚀 Quick Release Guide - HippoMind
 
 ## Ce Dont Vous Avez Besoin (Checklist)
 
@@ -48,15 +48,15 @@ Pendant ce temps, allez prendre un café ☕
 
 1. Aller sur https://github.com/ClemiMoogli/nodeflow/releases
 2. Vous verrez "v1.0.0" avec 3 fichiers :
-   - ✅ NodeFlow-1.0.0.dmg (~100-200 MB)
-   - ✅ NodeFlow-1.0.0.exe (~50-100 MB)
-   - ✅ NodeFlow-1.0.0.AppImage (~100-150 MB)
+   - ✅ HippoMind-1.0.0.dmg (~100-200 MB)
+   - ✅ HippoMind-1.0.0.exe (~50-100 MB)
+   - ✅ HippoMind-1.0.0.AppImage (~100-150 MB)
 
 ### 5️⃣ Télécharger et Tester le DMG (5 minutes)
 
 ```bash
 # Télécharger depuis GitHub
-open https://github.com/ClemiMoogli/nodeflow/releases/download/v1.0.0/NodeFlow-1.0.0.dmg
+open https://github.com/ClemiMoogli/nodeflow/releases/download/v1.0.0/HippoMind-1.0.0.dmg
 
 # Installer localement
 # Double-cliquer sur le DMG
@@ -80,10 +80,10 @@ open https://github.com/ClemiMoogli/nodeflow/releases/download/v1.0.0/NodeFlow-1
 
 href={
   platform.name === 'mac'
-    ? 'https://github.com/ClemiMoogli/nodeflow/releases/download/v1.0.0/NodeFlow-1.0.0.dmg'
+    ? 'https://github.com/ClemiMoogli/nodeflow/releases/download/v1.0.0/HippoMind-1.0.0.dmg'
     : platform.name === 'windows'
-    ? 'https://github.com/ClemiMoogli/nodeflow/releases/download/v1.0.0/NodeFlow-1.0.0.exe'
-    : 'https://github.com/ClemiMoogli/nodeflow/releases/download/v1.0.0/NodeFlow-1.0.0.AppImage'
+    ? 'https://github.com/ClemiMoogli/nodeflow/releases/download/v1.0.0/HippoMind-1.0.0.exe'
+    : 'https://github.com/ClemiMoogli/nodeflow/releases/download/v1.0.0/HippoMind-1.0.0.AppImage'
 }
 ```
 
@@ -92,10 +92,10 @@ Ou mieux, utilisez `/latest/` pour toujours pointer vers la dernière version :
 ```tsx
 href={
   platform.name === 'mac'
-    ? 'https://github.com/ClemiMoogli/nodeflow/releases/latest/download/NodeFlow-1.0.0.dmg'
+    ? 'https://github.com/ClemiMoogli/nodeflow/releases/latest/download/HippoMind-1.0.0.dmg'
     : platform.name === 'windows'
-    ? 'https://github.com/ClemiMoogli/nodeflow/releases/latest/download/NodeFlow-1.0.0.exe'
-    : 'https://github.com/ClemiMoogli/nodeflow/releases/latest/download/NodeFlow-1.0.0.AppImage'
+    ? 'https://github.com/ClemiMoogli/nodeflow/releases/latest/download/HippoMind-1.0.0.exe'
+    : 'https://github.com/ClemiMoogli/nodeflow/releases/latest/download/HippoMind-1.0.0.AppImage'
 }
 ```
 

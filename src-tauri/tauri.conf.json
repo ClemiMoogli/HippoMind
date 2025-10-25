@@ -1,7 +1,7 @@
 {
-  "productName": "NodeFlow",
+  "productName": "HippoMind",
   "version": "1.0.0",
-  "identifier": "com.nodeflow.desktop",
+  "identifier": "com.hippomind.desktop",
   "build": {
     "beforeDevCommand": "cd packages/renderer && npm run dev",
     "beforeBuildCommand": "cd packages/renderer && npm run build",
@@ -38,7 +38,7 @@
     "windows": [
       {
         "label": "main",
-        "title": "NodeFlow",
+        "title": "HippoMind",
         "width": 1200,
         "height": 800,
         "minWidth": 800,

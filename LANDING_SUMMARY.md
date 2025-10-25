@@ -1,8 +1,8 @@
-# 🎉 Landing Page NodeFlow - Résumé Complet
+# 🎉 Landing Page HippoMind - Résumé Complet
 
 ## ✅ Ce qui a été créé
 
-Vous disposez maintenant d'une **landing page professionnelle** pour votre application NodeFlow !
+Vous disposez maintenant d'une **landing page professionnelle** pour votre application HippoMind !
 
 ### 📍 Emplacement
 ```
@@ -101,7 +101,7 @@ landing/
 Actuellement, la section Demo utilise un mockup SVG. Remplacez-le par de vrais screenshots :
 
 ```bash
-# 1. Prendre screenshots de NodeFlow
+# 1. Prendre screenshots de HippoMind
 # 2. Optimiser (WebP)
 # 3. Ajouter dans landing/public/screenshots/
 # 4. Mettre à jour components/Demo.tsx
@@ -113,7 +113,7 @@ Actuellement, la section Demo utilise un mockup SVG. Remplacez-le par de vrais s
 
 ```tsx
 // Remplacer href="#download-mac" par :
-href="https://releases.localmind.app/NodeFlow-macOS.dmg"
+href="https://releases.localmind.app/HippoMind-macOS.dmg"
 ```
 
 ### 3. Ajouter Logo et Favicon

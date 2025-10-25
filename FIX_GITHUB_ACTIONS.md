@@ -43,9 +43,9 @@ Le workflow fait maintenant :
 
 ## Fichiers Créés par le Build
 
-- **macOS** : `src-tauri/target/release/bundle/macos/NodeFlow.app` + DMG
-- **Windows** : `src-tauri/target/release/bundle/msi/NodeFlow.msi`
-- **Linux** : `src-tauri/target/release/bundle/appimage/NodeFlow.AppImage`
+- **macOS** : `src-tauri/target/release/bundle/macos/HippoMind.app` + DMG
+- **Windows** : `src-tauri/target/release/bundle/msi/HippoMind.msi`
+- **Linux** : `src-tauri/target/release/bundle/appimage/HippoMind.AppImage`
 
 ## Si Ça Échoue Encore
 

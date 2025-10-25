@@ -8,12 +8,14 @@ import { Toolbar } from './components/Toolbar';
 import { Sidebar } from './components/Sidebar';
 import { ToolPalette } from './components/ToolPalette';
 import { WelcomeScreen } from './components/WelcomeScreen';
+import { LicenseDialog } from './components/LicenseDialog';
 import { TabBar } from './components/TabBar';
 import { useUIStore } from './store/ui.store';
 import { useMindMapStore } from './store/mindmap.store';
 import { useTabsStore } from './store/tabs.store';
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts';
 import { useAutosave } from './hooks/useAutosave';
+import { isLicensed } from './utils/license';
 
 export function App() {
   const theme = useUIStore((state) => state.theme);
@@ -24,6 +26,7 @@ export function App() {
   const currentDocument = useMindMapStore((state) => state.document);
   const updateTabDocument = useTabsStore((state) => state.updateTabDocument);
   const [showWelcome, setShowWelcome] = useState(true);
+  const [showLicenseDialog, setShowLicenseDialog] = useState(!isLicensed());
   const [previousTabId, setPreviousTabId] = useState<string | null>(null);
 
   // Set up keyboard shortcuts
@@ -77,7 +80,9 @@ export function App() {
 
   return (
     <div className="w-full h-full flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-      {showWelcome ? (
+      {showLicenseDialog ? (
+        <LicenseDialog onLicenseActivated={() => setShowLicenseDialog(false)} />
+      ) : showWelcome ? (
         <WelcomeScreen onClose={() => setShowWelcome(false)} />
       ) : (
         <>

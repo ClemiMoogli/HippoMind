@@ -5,6 +5,7 @@
 // Types
 export * from './types/mindmap';
 export * from './types/ipc';
+export * from './types/license';
 
 // Constants
 export * from './constants';

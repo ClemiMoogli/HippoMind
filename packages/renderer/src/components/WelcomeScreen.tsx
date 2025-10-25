@@ -73,7 +73,7 @@ export function WelcomeScreen({ onClose }: WelcomeScreenProps) {
       <div className="fixed inset-0 bg-white dark:bg-gray-900 z-50 flex items-center justify-center">
         <div className="text-center">
           <div className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            NodeFlow
+            HippoMind
           </div>
           <p className="text-gray-500">Chargement...</p>
         </div>
@@ -96,9 +96,9 @@ export function WelcomeScreen({ onClose }: WelcomeScreenProps) {
             <h1 className="text-4xl font-bold mb-8">Tutoriel - Guide d'utilisation</h1>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4">Bienvenue dans NodeFlow!</h2>
+              <h2 className="text-2xl font-semibold mb-4">Bienvenue dans HippoMind!</h2>
               <p className="text-lg mb-4">
-                NodeFlow est un outil puissant pour créer des cartes mentales interactives.
+                HippoMind est un outil puissant pour créer des cartes mentales interactives.
                 Ce tutoriel vous guidera à travers les fonctionnalités principales.
               </p>
             </section>
@@ -179,7 +179,7 @@ export function WelcomeScreen({ onClose }: WelcomeScreenProps) {
       <div className="max-w-2xl w-full mx-auto p-8">
         <div className="text-center mb-12">
           <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            NodeFlow
+            HippoMind
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400">
             Créez des cartes mentales interactives et organisez vos idées

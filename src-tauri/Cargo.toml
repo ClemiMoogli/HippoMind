@@ -1,8 +1,8 @@
 [package]
-name = "nodeflow"
+name = "hippomind"
 version = "1.0.0"
 description = "Offline-first mind mapping application with local storage"
-authors = ["NodeFlow"]
+authors = ["HippoMind"]
 edition = "2021"
 
 [build-dependencies]

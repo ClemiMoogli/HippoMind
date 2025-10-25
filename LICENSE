@@ -1,9 +1,47 @@
-Copyright (c) 2025 LocalMind
+# HippoMind Proprietary License
 
-Tous droits réservés.
+Copyright (c) 2025 Clement Jouanny (cjlabs)
 
-Ce logiciel et les fichiers associés sont propriétaires.
-La distribution, modification, ou utilisation commerciale sans autorisation
-est strictement interdite.
+All rights reserved.
 
-Pour obtenir une licence, contactez : [votre email]
+## Source Code Viewing License
+
+The source code in this repository is made publicly available for **transparency,
+educational purposes, and security auditing only**.
+
+### Permissions
+
+- ✅ **View** the source code
+- ✅ **Learn** from the implementation
+- ✅ **Report** security issues or bugs
+- ✅ **Fork** for personal educational purposes
+
+### Restrictions
+
+- ❌ **NO Commercial Use**: You may NOT use this code for commercial purposes
+- ❌ **NO Distribution**: You may NOT distribute modified or unmodified versions
+- ❌ **NO Selling**: You may NOT sell applications based on this code
+- ❌ **NO Competing Products**: You may NOT create competing mind mapping products
+
+### Official Distribution
+
+The ONLY authorized distribution channels are:
+- Official website: https://hippomind.org
+- Official GitHub Releases: https://github.com/clement-jny/MindMap/releases
+- Official Gumroad store: https://cjlabs.gumroad.com/l/uvsste
+
+### Warranty Disclaimer
+
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+### Contact
+
+For licensing inquiries: support@hippomind.org
+
+---
+
+**TL;DR**: You can read the code and learn from it, but you can't use it to
+build your own commercial product. If you want to use HippoMind, please purchase
+a license at https://hippomind.org

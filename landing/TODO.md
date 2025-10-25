@@ -3,7 +3,7 @@
 ## 🔴 Priorité Haute (Avant Lancement)
 
 - [ ] **Remplacer le mockup SVG par des screenshots réels**
-  - Prendre screenshots de l'app NodeFlow
+  - Prendre screenshots de l'app HippoMind
   - Optimiser en WebP (tools: Squoosh, TinyPNG)
   - Ajouter dans `/public/screenshots/`
   - Mettre à jour `components/Demo.tsx`
@@ -14,13 +14,13 @@
   - Tester les téléchargements
 
 - [ ] **Ajouter logo et favicon**
-  - Créer ou exporter logo NodeFlow (SVG + PNG)
+  - Créer ou exporter logo HippoMind (SVG + PNG)
   - Générer favicons (https://realfavicongenerator.net/)
   - Ajouter dans `/public/`
   - Mettre à jour `app/[locale]/layout.tsx`
 
 - [ ] **Créer OG image (OpenGraph)**
-  - Design 1200x630px avec titre "NodeFlow"
+  - Design 1200x630px avec titre "HippoMind"
   - Inclure tagline et visuel
   - Ajouter dans `/public/og-image.png`
   - Configurer metadata dans layout.tsx

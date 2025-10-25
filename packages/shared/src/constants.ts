@@ -2,7 +2,7 @@
  * Application-wide constants
  */
 
-export const APP_NAME = 'NodeFlow';
+export const APP_NAME = 'HippoMind';
 export const APP_VERSION = '1.0.0';
 export const FILE_FORMAT_VERSION = '1.0.0';
 

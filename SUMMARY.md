@@ -1,10 +1,10 @@
-# NodeFlow - Résumé du projet
+# HippoMind - Résumé du projet
 
 ## État actuel
 
 ✅ **Projet entièrement initialisé et fonctionnel !**
 
-Le projet NodeFlow est une application desktop de mind mapping offline-first, construite avec Electron, React, et TypeScript.
+Le projet HippoMind est une application desktop de mind mapping offline-first, construite avec Electron, React, et TypeScript.
 
 ## Architecture mise en place
 

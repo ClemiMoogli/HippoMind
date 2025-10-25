@@ -1,4 +1,4 @@
-# Structure du projet NodeFlow
+# Structure du projet HippoMind
 
 ```
 MindMap/

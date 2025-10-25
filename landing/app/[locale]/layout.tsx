@@ -26,8 +26,18 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>
-        <title>NodeFlow - Your Mind Maps, 100% Offline</title>
+        <title>HippoMind - Your Mind Maps, 100% Offline</title>
         <meta name="description" content="The mind mapping app that respects your privacy. No subscription, no cloud, just you and your ideas." />
+        <meta property="og:title" content="HippoMind - Your Mind Maps, 100% Offline" />
+        <meta property="og:description" content="The mind mapping app that respects your privacy. No subscription, no cloud, just you and your ideas." />
+        <meta property="og:url" content="https://hippomind.org" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://hippomind.org/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="HippoMind - Your Mind Maps, 100% Offline" />
+        <meta name="twitter:description" content="The mind mapping app that respects your privacy. No subscription, no cloud, just you and your ideas." />
+        <meta name="twitter:image" content="https://hippomind.org/og-image.png" />
+        <link rel="canonical" href="https://hippomind.org" />
       </head>
       <body>
         <NextIntlClientProvider messages={messages}>

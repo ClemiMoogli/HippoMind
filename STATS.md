@@ -1,4 +1,4 @@
-# NodeFlow - Statistiques du projet
+# HippoMind - Statistiques du projet
 
 ## Vue d'ensemble
 
@@ -200,7 +200,7 @@
 
 ## Comparaison alternatives
 
-| Critère | NodeFlow | Alternatives |
+| Critère | HippoMind | Alternatives |
 |---------|-----------|--------------|
 | **Offline** | ✅ 100% | ⚠️ Partiel |
 | **Prix** | Achat unique | Abonnement |

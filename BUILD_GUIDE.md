@@ -1,4 +1,4 @@
-# 🏗️ Guide de Build - NodeFlow
+# 🏗️ Guide de Build - HippoMind
 
 ## Vue d'ensemble
 
@@ -20,7 +20,7 @@ npm run dist:mac
 ```
 
 **Résultat** :
-- `dist-electron/NodeFlow-1.0.0.dmg` (~100-200 MB)
+- `dist-electron/HippoMind-1.0.0.dmg` (~100-200 MB)
 - Compatible Apple Silicon (M1/M2/M3) ET Intel
 
 ### Créer la GitHub Release
@@ -28,10 +28,10 @@ npm run dist:mac
 1. Aller sur https://github.com/ClemiMoogli/nodeflow/releases
 2. Cliquer "Draft a new release"
 3. Tag : `v1.0.0`
-4. Title : `NodeFlow 1.0.0`
+4. Title : `HippoMind 1.0.0`
 5. Description :
    ```markdown
-   ## 🎉 NodeFlow v1.0.0 - First Release
+   ## 🎉 HippoMind v1.0.0 - First Release
 
    ### ✨ Features
    - 100% Offline mind mapping
@@ -42,18 +42,18 @@ npm run dist:mac
    - FR/EN interface
 
    ### 📥 Downloads
-   - **macOS** : NodeFlow-1.0.0.dmg (Universal - Intel + Apple Silicon)
+   - **macOS** : HippoMind-1.0.0.dmg (Universal - Intel + Apple Silicon)
    - **Windows** : Coming soon
    - **Linux** : Coming soon
 
    ### 💻 macOS Installation
    1. Télécharger le DMG
    2. Double-cliquer sur le fichier
-   3. Glisser NodeFlow vers Applications
+   3. Glisser HippoMind vers Applications
    4. Lancer depuis le Launchpad
    ```
 
-6. **Attacher le DMG** : Glisser `dist-electron/NodeFlow-1.0.0.dmg`
+6. **Attacher le DMG** : Glisser `dist-electron/HippoMind-1.0.0.dmg`
 7. Publish release
 
 **Avantages** :
@@ -186,9 +186,9 @@ git push --tags
 # 4. Vérifier https://github.com/ClemiMoogli/nodeflow/releases
 
 # 5. Les 3 fichiers seront là :
-# - NodeFlow-1.0.0.dmg
-# - NodeFlow-1.0.0.exe
-# - NodeFlow-1.0.0.AppImage
+# - HippoMind-1.0.0.dmg
+# - HippoMind-1.0.0.exe
+# - HippoMind-1.0.0.AppImage
 ```
 
 ### Workflow Habituel
@@ -225,7 +225,7 @@ Avant de créer une release publique, testez le build :
 npm run dist:mac
 
 # Installer le DMG localement
-open dist-electron/NodeFlow-1.0.0.dmg
+open dist-electron/HippoMind-1.0.0.dmg
 
 # Tester l'app
 # - Lancer
@@ -243,17 +243,17 @@ open dist-electron/NodeFlow-1.0.0.dmg
 Une fois la release créée, les URLs seront :
 
 ```
-https://github.com/ClemiMoogli/nodeflow/releases/download/v1.0.0/NodeFlow-1.0.0.dmg
-https://github.com/ClemiMoogli/nodeflow/releases/download/v1.0.0/NodeFlow-1.0.0.exe
-https://github.com/ClemiMoogli/nodeflow/releases/download/v1.0.0/NodeFlow-1.0.0.AppImage
+https://github.com/ClemiMoogli/nodeflow/releases/download/v1.0.0/HippoMind-1.0.0.dmg
+https://github.com/ClemiMoogli/nodeflow/releases/download/v1.0.0/HippoMind-1.0.0.exe
+https://github.com/ClemiMoogli/nodeflow/releases/download/v1.0.0/HippoMind-1.0.0.AppImage
 ```
 
 Ou pour toujours pointer vers la dernière version :
 
 ```
-https://github.com/ClemiMoogli/nodeflow/releases/latest/download/NodeFlow-macOS.dmg
-https://github.com/ClemiMoogli/nodeflow/releases/latest/download/NodeFlow-Windows.exe
-https://github.com/ClemiMoogli/nodeflow/releases/latest/download/NodeFlow-Linux.AppImage
+https://github.com/ClemiMoogli/nodeflow/releases/latest/download/HippoMind-macOS.dmg
+https://github.com/ClemiMoogli/nodeflow/releases/latest/download/HippoMind-Windows.exe
+https://github.com/ClemiMoogli/nodeflow/releases/latest/download/HippoMind-Linux.AppImage
 ```
 
 ⚠️ **Attention** : Pour `/latest/`, les noms de fichiers doivent être **constants** (pas de version dans le nom).
@@ -268,10 +268,10 @@ Une fois la release créée, mettez à jour `landing/components/Downloads.tsx` :
 // Ligne ~84-120
 href={
   platform.name === 'mac'
-    ? 'https://github.com/ClemiMoogli/nodeflow/releases/latest/download/NodeFlow-macOS.dmg'
+    ? 'https://github.com/ClemiMoogli/nodeflow/releases/latest/download/HippoMind-macOS.dmg'
     : platform.name === 'windows'
-    ? 'https://github.com/ClemiMoogli/nodeflow/releases/latest/download/NodeFlow-Windows.exe'
-    : 'https://github.com/ClemiMoogli/nodeflow/releases/latest/download/NodeFlow-Linux.AppImage'
+    ? 'https://github.com/ClemiMoogli/nodeflow/releases/latest/download/HippoMind-Windows.exe'
+    : 'https://github.com/ClemiMoogli/nodeflow/releases/latest/download/HippoMind-Linux.AppImage'
 }
 ```
 

@@ -1,4 +1,4 @@
-# ⚡ Quick Start - Landing Page NodeFlow
+# ⚡ Quick Start - Landing Page HippoMind
 
 ## 🚀 Lancer en 30 secondes
 
@@ -52,7 +52,7 @@ Cliquez sur EN/FR dans la navbar pour changer de langue.
 - Card de pricing avec liste de features
 - Prix 19€ ou $19
 - Tableau de comparaison vs concurrents
-- CTA "Get NodeFlow Now"
+- CTA "Get HippoMind Now"
 
 ### 5. Downloads Section
 - 3 boutons : macOS / Windows / Linux
@@ -179,7 +179,7 @@ Commentez simplement :
 ```tsx
 <Image
   src="/screenshots/app-screenshot.png"
-  alt="NodeFlow App"
+  alt="HippoMind App"
   width={1200}
   height={675}
 />

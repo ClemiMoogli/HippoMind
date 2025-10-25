@@ -1,8 +1,8 @@
-# 🚀 NodeFlow Landing Page - Guide Complet
+# 🚀 HippoMind Landing Page - Guide Complet
 
 ## ✅ Ce qui a été créé
 
-Vous avez maintenant une landing page moderne et professionnelle pour NodeFlow ! Voici tout ce qui a été implémenté :
+Vous avez maintenant une landing page moderne et professionnelle pour HippoMind ! Voici tout ce qui a été implémenté :
 
 ### 🎨 Design & Animations
 
@@ -169,9 +169,9 @@ npm run start
 
 ```tsx
 // Remplacer les href="#download-{platform}" par :
-href="https://releases.localmind.app/NodeFlow-macOS.dmg"
-href="https://releases.localmind.app/NodeFlow-Windows.exe"
-href="https://releases.localmind.app/NodeFlow-Linux.AppImage"
+href="https://releases.localmind.app/HippoMind-macOS.dmg"
+href="https://releases.localmind.app/HippoMind-Windows.exe"
+href="https://releases.localmind.app/HippoMind-Linux.AppImage"
 ```
 
 Ou utiliser les variables d'environnement dans `.env.local` :
@@ -299,13 +299,13 @@ pm2 start npm --name "localmind-landing" -- start
 
 ```tsx
 export const metadata = {
-  title: 'NodeFlow - Your Mind Maps, 100% Offline',
+  title: 'HippoMind - Your Mind Maps, 100% Offline',
   description: 'The mind mapping app that respects your privacy...',
   openGraph: {
-    title: 'NodeFlow',
+    title: 'HippoMind',
     description: '...',
     url: 'https://localmind.app',
-    siteName: 'NodeFlow',
+    siteName: 'HippoMind',
     images: [
       {
         url: 'https://localmind.app/og-image.png',
@@ -318,7 +318,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NodeFlow',
+    title: 'HippoMind',
     description: '...',
     images: ['https://localmind.app/og-image.png'],
   },
@@ -397,7 +397,7 @@ npm run dev -- -p 3001  # Utiliser port 3001
 
 ## 🎉 Félicitations !
 
-Votre landing page NodeFlow est prête ! Vous avez :
+Votre landing page HippoMind est prête ! Vous avez :
 
 - ✅ Design moderne avec parallaxe et animations
 - ✅ i18n FR/EN complet

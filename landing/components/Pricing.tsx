@@ -57,6 +57,9 @@ export default function Pricing() {
                     {price}
                   </span>
                 </div>
+                <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">
+                  {t('priceNote')}
+                </p>
                 <p className="text-gray-600 dark:text-gray-400 mt-2">
                   {t('subtitle')}
                 </p>
@@ -92,7 +95,9 @@ export default function Pricing() {
               </ul>
 
               <a
-                href="#downloads"
+                href={process.env.NEXT_PUBLIC_GUMROAD_URL || '#downloads'}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block w-full py-4 px-6 text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
               >
                 {t('cta')}
@@ -115,7 +120,7 @@ export default function Pricing() {
               {/* Price */}
               <div className="flex justify-between items-center pb-4 border-b border-white/10">
                 <div>
-                  <p className="text-white font-semibold">NodeFlow</p>
+                  <p className="text-white font-semibold">HippoMind</p>
                   <p className="text-green-400 text-lg font-bold">{price}</p>
                 </div>
                 <div className="text-right">

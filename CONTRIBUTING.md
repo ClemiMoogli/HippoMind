@@ -1,6 +1,6 @@
 # Guide de contribution
 
-Merci de votre intérêt pour NodeFlow !
+Merci de votre intérêt pour HippoMind !
 
 ## Code de conduite
 

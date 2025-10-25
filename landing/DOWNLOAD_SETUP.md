@@ -15,7 +15,7 @@ Actuellement, les boutons de téléchargement pointent vers des liens factices (
 
 ### Configuration
 
-#### 1. Créer un repo GitHub pour NodeFlow
+#### 1. Créer un repo GitHub pour HippoMind
 
 ```bash
 # Si pas déjà fait
@@ -33,15 +33,15 @@ git push -u origin main
 ```bash
 # macOS
 npm run dist:mac
-# → Crée dist-electron/NodeFlow-x.x.x.dmg
+# → Crée dist-electron/HippoMind-x.x.x.dmg
 
 # Windows (si sur Windows)
 npm run dist:win
-# → Crée dist-electron/NodeFlow-x.x.x.exe
+# → Crée dist-electron/HippoMind-x.x.x.exe
 
 # Linux
 npm run dist:linux
-# → Crée dist-electron/NodeFlow-x.x.x.AppImage
+# → Crée dist-electron/HippoMind-x.x.x.AppImage
 ```
 
 #### 3. Créer une GitHub Release
@@ -49,7 +49,7 @@ npm run dist:linux
 1. Aller sur https://github.com/VOTRE_USERNAME/nodeflow/releases
 2. Cliquer sur "Draft a new release"
 3. Tag version : `v1.0.0`
-4. Release title : `NodeFlow 1.0.0`
+4. Release title : `HippoMind 1.0.0`
 5. Description :
    ```markdown
    ## 🎉 First Release
@@ -62,9 +62,9 @@ npm run dist:linux
    - Undo/Redo illimité
 
    ### Downloads
-   - **macOS** : NodeFlow-1.0.0.dmg (Apple Silicon + Intel)
-   - **Windows** : NodeFlow-1.0.0.exe (64-bit)
-   - **Linux** : NodeFlow-1.0.0.AppImage
+   - **macOS** : HippoMind-1.0.0.dmg (Apple Silicon + Intel)
+   - **Windows** : HippoMind-1.0.0.exe (64-bit)
+   - **Linux** : HippoMind-1.0.0.AppImage
 
    ### Installation
    - **macOS** : Double-cliquer sur le DMG, glisser vers Applications
@@ -83,14 +83,14 @@ Une fois publié, faites clic-droit sur chaque fichier → "Copy link address"
 
 Vous obtiendrez des URLs du type :
 ```
-https://github.com/VOTRE_USERNAME/nodeflow/releases/download/v1.0.0/NodeFlow-1.0.0.dmg
-https://github.com/VOTRE_USERNAME/nodeflow/releases/download/v1.0.0/NodeFlow-1.0.0.exe
-https://github.com/VOTRE_USERNAME/nodeflow/releases/download/v1.0.0/NodeFlow-1.0.0.AppImage
+https://github.com/VOTRE_USERNAME/nodeflow/releases/download/v1.0.0/HippoMind-1.0.0.dmg
+https://github.com/VOTRE_USERNAME/nodeflow/releases/download/v1.0.0/HippoMind-1.0.0.exe
+https://github.com/VOTRE_USERNAME/nodeflow/releases/download/v1.0.0/HippoMind-1.0.0.AppImage
 ```
 
 **Astuce** : Pour toujours pointer vers la dernière version, utilisez `/latest/` :
 ```
-https://github.com/VOTRE_USERNAME/nodeflow/releases/latest/download/NodeFlow-macOS.dmg
+https://github.com/VOTRE_USERNAME/nodeflow/releases/latest/download/HippoMind-macOS.dmg
 ```
 
 #### 5. Mettre à jour la landing page
@@ -103,10 +103,10 @@ https://github.com/VOTRE_USERNAME/nodeflow/releases/latest/download/NodeFlow-mac
   key={platform.name}
   href={
     platform.name === 'mac'
-      ? 'https://github.com/VOTRE_USERNAME/nodeflow/releases/latest/download/NodeFlow-macOS.dmg'
+      ? 'https://github.com/VOTRE_USERNAME/nodeflow/releases/latest/download/HippoMind-macOS.dmg'
       : platform.name === 'windows'
-      ? 'https://github.com/VOTRE_USERNAME/nodeflow/releases/latest/download/NodeFlow-Windows.exe'
-      : 'https://github.com/VOTRE_USERNAME/nodeflow/releases/latest/download/NodeFlow-Linux.AppImage'
+      ? 'https://github.com/VOTRE_USERNAME/nodeflow/releases/latest/download/HippoMind-Windows.exe'
+      : 'https://github.com/VOTRE_USERNAME/nodeflow/releases/latest/download/HippoMind-Linux.AppImage'
   }
   // ... reste du code
 >
@@ -115,9 +115,9 @@ https://github.com/VOTRE_USERNAME/nodeflow/releases/latest/download/NodeFlow-mac
 Ou mieux, utilisez des variables d'environnement dans `.env.local` :
 
 ```bash
-NEXT_PUBLIC_DOWNLOAD_MAC=https://github.com/VOTRE_USERNAME/nodeflow/releases/latest/download/NodeFlow-macOS.dmg
-NEXT_PUBLIC_DOWNLOAD_WINDOWS=https://github.com/VOTRE_USERNAME/nodeflow/releases/latest/download/NodeFlow-Windows.exe
-NEXT_PUBLIC_DOWNLOAD_LINUX=https://github.com/VOTRE_USERNAME/nodeflow/releases/latest/download/NodeFlow-Linux.AppImage
+NEXT_PUBLIC_DOWNLOAD_MAC=https://github.com/VOTRE_USERNAME/nodeflow/releases/latest/download/HippoMind-macOS.dmg
+NEXT_PUBLIC_DOWNLOAD_WINDOWS=https://github.com/VOTRE_USERNAME/nodeflow/releases/latest/download/HippoMind-Windows.exe
+NEXT_PUBLIC_DOWNLOAD_LINUX=https://github.com/VOTRE_USERNAME/nodeflow/releases/latest/download/HippoMind-Linux.AppImage
 ```
 
 Puis dans `Downloads.tsx` :
@@ -154,7 +154,7 @@ server {
 }
 ```
 
-4. **URLs** : `https://releases.nodeflow.app/downloads/NodeFlow-macOS.dmg`
+4. **URLs** : `https://releases.nodeflow.app/downloads/HippoMind-macOS.dmg`
 
 ### Avantages
 - ✅ Contrôle total
@@ -181,7 +181,7 @@ server {
 2. Créer un bucket R2 : `nodeflow-releases`
 3. Uploader les fichiers
 4. Configurer un domaine personnalisé : `releases.nodeflow.app`
-5. URLs publiques : `https://releases.nodeflow.app/NodeFlow-macOS.dmg`
+5. URLs publiques : `https://releases.nodeflow.app/HippoMind-macOS.dmg`
 
 ### Coûts
 - Stockage : 0.015€/GB/mois
@@ -204,9 +204,9 @@ export async function GET(
   { params }: { params: { platform: string } }
 ) {
   const urls = {
-    mac: 'https://xxxxx.public.blob.vercel-storage.com/NodeFlow-macOS.dmg',
-    windows: 'https://xxxxx.public.blob.vercel-storage.com/NodeFlow-Windows.exe',
-    linux: 'https://xxxxx.public.blob.vercel-storage.com/NodeFlow-Linux.AppImage',
+    mac: 'https://xxxxx.public.blob.vercel-storage.com/HippoMind-macOS.dmg',
+    windows: 'https://xxxxx.public.blob.vercel-storage.com/HippoMind-Windows.exe',
+    linux: 'https://xxxxx.public.blob.vercel-storage.com/HippoMind-Linux.AppImage',
   };
 
   // Redirect vers le fichier
@@ -248,9 +248,9 @@ export async function GET(
 
   // 2. Rediriger vers GitHub Release
   const urls = {
-    mac: 'https://github.com/.../NodeFlow-macOS.dmg',
-    windows: 'https://github.com/.../NodeFlow-Windows.exe',
-    linux: 'https://github.com/.../NodeFlow-Linux.AppImage',
+    mac: 'https://github.com/.../HippoMind-macOS.dmg',
+    windows: 'https://github.com/.../HippoMind-Windows.exe',
+    linux: 'https://github.com/.../HippoMind-Linux.AppImage',
   };
 
   return Response.redirect(urls[platform as keyof typeof urls]);
@@ -263,7 +263,7 @@ Puis dans `Downloads.tsx`, pointer vers `/api/download/mac` au lieu de l'URL dir
 
 ```tsx
 <a
-  href="https://github.com/.../NodeFlow-macOS.dmg"
+  href="https://github.com/.../HippoMind-macOS.dmg"
   onClick={() => {
     // Track avec Google Analytics
     gtag('event', 'download', {

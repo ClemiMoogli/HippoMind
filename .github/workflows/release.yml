@@ -49,8 +49,36 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tagName: ${{ github.ref_name }}
-          releaseName: 'NodeFlow v__VERSION__'
-          releaseBody: 'See the assets to download and install this version.'
+          releaseName: 'HippoMind v__VERSION__'
+          releaseBody: |
+            # HippoMind v__VERSION__
+
+            Your privacy-first mind mapping app is ready to download!
+
+            ## 📥 Download for your platform:
+
+            - **macOS**: Download the `.dmg` file (Apple Silicon & Intel)
+            - **Windows**: Download the `.exe` installer
+            - **Linux**: Download the `.AppImage` file
+
+            ## 🆕 What's new in this version
+
+            - Initial release of HippoMind
+            - 100% offline mind mapping
+            - Beautiful themes (Light, Dark, Sepia, Slate)
+            - Unlimited nodes and mind maps
+            - Auto-save every 30 seconds
+            - Full keyboard shortcuts support
+
+            ## 🔑 Activation
+
+            After installation, you'll need to enter your license key.
+
+            Don't have a license yet? [Purchase HippoMind](https://hippomind.org)
+
+            ## 📖 Documentation
+
+            Need help? Visit [hippomind.org](https://hippomind.org) or contact support@hippomind.org
           releaseDraft: false
           prerelease: false
           args: ${{ matrix.args }}

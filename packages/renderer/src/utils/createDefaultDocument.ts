@@ -15,7 +15,7 @@ export function createDefaultDocument(title: string = 'Nouvelle carte'): MindMap
       title,
       createdAt: now,
       modifiedAt: now,
-      app: 'NodeFlow',
+      app: 'HippoMind',
       appVersion: '1.0.0',
       locale: 'fr',
     },
