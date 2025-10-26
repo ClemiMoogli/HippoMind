@@ -2,15 +2,13 @@
  * License validation utilities
  */
 
-import type { License, GumroadVerifyResponse } from '@shared';
+import type { License } from '@shared';
 
-// Gumroad product permalink (the slug in your product URL)
-// URL: https://cjlabs.gumroad.com/l/uvsste
-// Permalink: uvsste
-const GUMROAD_PRODUCT_ID = 'uvsste';
+// Your HippoMind API endpoint
+const API_URL = 'https://hippomind.org/api/verify-license';
 
 /**
- * Verify a license key with Gumroad API
+ * Verify a license key with HippoMind API
  */
 export async function verifyLicenseKey(licenseKey: string): Promise<{
   valid: boolean;
@@ -18,15 +16,14 @@ export async function verifyLicenseKey(licenseKey: string): Promise<{
   error?: string;
 }> {
   try {
-    const response = await fetch('https://api.gumroad.com/v2/licenses/verify', {
+    const response = await fetch(API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        product_id: GUMROAD_PRODUCT_ID,
         license_key: licenseKey.trim(),
-        increment_uses_count: false, // Don't increment on validation (only on activation)
+        increment: false, // Don't increment on validation (only on activation)
       }),
     });
 
@@ -37,17 +34,17 @@ export async function verifyLicenseKey(licenseKey: string): Promise<{
       };
     }
 
-    const data: GumroadVerifyResponse = await response.json();
+    const data = await response.json();
 
-    if (data.success) {
+    if (data.valid) {
       return {
         valid: true,
-        email: data.purchase.email,
+        email: data.email,
       };
     } else {
       return {
         valid: false,
-        error: 'Invalid license key. Please check and try again.',
+        error: data.error || 'Invalid license key. Please check and try again.',
       };
     }
   } catch (error) {
@@ -68,15 +65,14 @@ export async function activateLicenseKey(licenseKey: string): Promise<{
   error?: string;
 }> {
   try {
-    const response = await fetch('https://api.gumroad.com/v2/licenses/verify', {
+    const response = await fetch(API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        product_id: GUMROAD_PRODUCT_ID,
         license_key: licenseKey.trim(),
-        increment_uses_count: true, // Increment use count on activation
+        increment: true, // Increment use count on activation
       }),
     });
 
@@ -87,17 +83,17 @@ export async function activateLicenseKey(licenseKey: string): Promise<{
       };
     }
 
-    const data: GumroadVerifyResponse = await response.json();
+    const data = await response.json();
 
-    if (data.success) {
+    if (data.valid) {
       return {
         valid: true,
-        email: data.purchase.email,
+        email: data.email,
       };
     } else {
       return {
         valid: false,
-        error: 'Invalid license key. Please check and try again.',
+        error: data.error || 'Invalid license key. Please check and try again.',
       };
     }
   } catch (error) {
