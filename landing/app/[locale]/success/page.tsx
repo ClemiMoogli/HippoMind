@@ -7,6 +7,7 @@ import { Suspense } from 'react';
 import { redirect } from 'next/navigation';
 import { stripe } from '@/lib/stripe';
 import { getLicenseBySession } from '@/lib/db';
+import CopyButton from '@/components/CopyButton';
 
 async function SuccessContent({
   searchParams,
@@ -28,23 +29,23 @@ async function SuccessContent({
       redirect('/#pricing');
     }
 
-    // Get the license from database
-    const license = await getLicenseBySession(sessionId);
+    // Get the license from database, or generate it if webhook hasn't fired yet
+    let license = await getLicenseBySession(sessionId);
 
+    // If license doesn't exist yet (webhook hasn't fired), generate it now
     if (!license) {
-      return (
-        <div className="min-h-screen flex items-center justify-center px-4">
-          <div className="max-w-md w-full bg-yellow-50 border border-yellow-200 rounded-lg p-8">
-            <h1 className="text-2xl font-bold text-yellow-900 mb-4">
-              Processing...
-            </h1>
-            <p className="text-yellow-700">
-              Your payment was successful! Your license key is being generated.
-              Please refresh this page in a few seconds or check your email.
-            </p>
-          </div>
-        </div>
+      const { createLicense } = await import('@/lib/license');
+      const { storeLicense } = await import('@/lib/db');
+
+      license = createLicense(
+        session.customer_email || session.customer_details?.email || 'unknown@email.com',
+        sessionId,
+        session.customer as string | undefined,
+        session.amount_total || 0,
+        session.currency || 'usd'
       );
+
+      await storeLicense(license);
     }
 
     return (
@@ -73,7 +74,7 @@ async function SuccessContent({
           </h1>
 
           <p className="text-center text-gray-600 dark:text-gray-400 mb-8">
-            Your payment was successful. Here's your license key:
+            Your payment was successful. Here&apos;s your license key:
           </p>
 
           {/* License Key */}
@@ -85,23 +86,10 @@ async function SuccessContent({
               <code className="flex-1 text-2xl font-mono font-bold text-center py-4 bg-white dark:bg-gray-800 rounded border-2 border-blue-500 text-blue-600 dark:text-blue-400">
                 {license.key}
               </code>
-              <button
-                onClick={() => navigator.clipboard.writeText(license.key)}
-                className="px-4 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors"
-                title="Copy to clipboard"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-                  />
-                </svg>
-              </button>
+              <CopyButton text={license.key} />
             </div>
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 text-center">
-              Save this key! You'll need it to activate HippoMind.
+              Save this key! You&apos;ll need it to activate HippoMind.
             </p>
           </div>
 

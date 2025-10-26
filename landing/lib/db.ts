@@ -16,7 +16,7 @@ async function ensureDataDir() {
   const dataDir = path.join(process.cwd(), 'data');
   try {
     await fs.mkdir(dataDir, { recursive: true });
-  } catch (error) {
+  } catch {
     // Directory already exists
   }
 }
@@ -29,7 +29,7 @@ async function loadLicenses(): Promise<Record<string, License>> {
     await ensureDataDir();
     const data = await fs.readFile(DB_FILE, 'utf-8');
     return JSON.parse(data);
-  } catch (error) {
+  } catch {
     // File doesn't exist yet
     return {};
   }

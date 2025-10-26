@@ -8,7 +8,14 @@ import { stripe, STRIPE_PRICE_ID } from '@/lib/stripe';
 
 export async function POST(req: NextRequest) {
   try {
-    const { priceId } = await req.json();
+    // Try to parse JSON body, fallback to empty object if no body
+    let priceId;
+    try {
+      const body = await req.json();
+      priceId = body.priceId;
+    } catch {
+      priceId = undefined;
+    }
 
     // Use provided priceId or default from env
     const finalPriceId = priceId || STRIPE_PRICE_ID;
