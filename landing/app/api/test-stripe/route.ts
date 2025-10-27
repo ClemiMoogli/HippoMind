@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server';
-import { stripe } from '@/lib/stripe';
 
 export async function GET() {
   try {
@@ -18,10 +17,11 @@ export async function GET() {
         secretKeyPrefix: process.env.STRIPE_SECRET_KEY?.substring(0, 10) + '...',
       }
     });
-  } catch (error: any) {
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     return NextResponse.json({
       success: false,
-      error: error.message,
+      error: errorMessage,
     }, { status: 500 });
   }
 }
