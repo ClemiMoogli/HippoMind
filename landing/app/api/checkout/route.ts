@@ -36,8 +36,8 @@ export async function POST(req: NextRequest) {
         },
       ],
       mode: 'payment',
-      success_url: `${req.headers.get('origin')}/en/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${req.headers.get('origin')}/en#pricing`,
+      success_url: `${process.env.NEXT_PUBLIC_SITE_URL}/en/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL}/en#pricing`,
       allow_promotion_codes: true,
       billing_address_collection: 'required',
       customer_email: undefined, // Let user enter email
