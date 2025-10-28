@@ -1,0 +1,15 @@
+{
+  "HIPPO--1LP-EUTU-8COZ": {
+    "key": "HIPPO--1LP-EUTU-8COZ",
+    "email": "clementjeannin90@gmail.com",
+    "stripeSessionId": "cs_test_b18zyLMfVqSLXHdjUuOrK9s3X3SCE8aaD3QxqZVJroY9nXhGrPtig3ZYSk",
+    "stripeCustomerId": null,
+    "productName": "HippoMind",
+    "price": 1900,
+    "currency": "eur",
+    "createdAt": "2025-10-26T10:22:31.541Z",
+    "active": true,
+    "activations": 0,
+    "maxActivations": 3
+  }
+}
