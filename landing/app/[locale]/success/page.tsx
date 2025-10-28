@@ -175,7 +175,55 @@ async function SuccessContent({
     );
   } catch (error) {
     console.error('Error retrieving session:', error);
-    redirect('/');
+
+    // Display error page instead of silent redirect
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center px-4">
+        <div className="max-w-2xl w-full bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 md:p-12">
+          <div className="w-20 h-20 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg
+              className="w-10 h-10 text-red-600 dark:text-red-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </div>
+          <h1 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900 dark:text-white">
+            Error Loading Payment
+          </h1>
+          <p className="text-center text-gray-600 dark:text-gray-400 mb-4">
+            There was an error retrieving your payment information.
+          </p>
+          <div className="bg-gray-100 dark:bg-gray-700 rounded-lg p-4 mb-6">
+            <p className="text-sm text-gray-700 dark:text-gray-300 font-mono break-all">
+              {error instanceof Error ? error.message : 'Unknown error'}
+            </p>
+          </div>
+          <p className="text-center text-sm text-gray-600 dark:text-gray-400 mb-6">
+            If your payment was successful, please contact support with your session ID:
+            <br />
+            <code className="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded mt-2 inline-block">
+              {sessionId}
+            </code>
+          </p>
+          <div className="text-center">
+            <a
+              href="mailto:support@hippomind.org"
+              className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Contact Support
+            </a>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 

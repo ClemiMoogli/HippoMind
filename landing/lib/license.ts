@@ -3,6 +3,7 @@
  */
 
 import { nanoid } from 'nanoid';
+import { createHash } from 'crypto';
 
 export interface License {
   key: string;
@@ -19,7 +20,24 @@ export interface License {
 }
 
 /**
- * Generate a unique license key
+ * Generate a deterministic license key from a session ID
+ * Format: HIPPO-XXXX-XXXX-XXXX
+ */
+export function generateLicenseKeyFromSession(sessionId: string): string {
+  // Create a deterministic hash from the session ID
+  const hash = createHash('sha256').update(sessionId).digest('hex');
+
+  // Take 12 characters from the hash and format them
+  const chars = hash.toUpperCase();
+  const part1 = chars.substring(0, 4);
+  const part2 = chars.substring(4, 8);
+  const part3 = chars.substring(8, 12);
+
+  return `HIPPO-${part1}-${part2}-${part3}`;
+}
+
+/**
+ * Generate a random license key
  * Format: HIPPO-XXXX-XXXX-XXXX
  */
 export function generateLicenseKey(): string {
@@ -41,7 +59,7 @@ export function createLicense(
   currency: string
 ): License {
   return {
-    key: generateLicenseKey(),
+    key: generateLicenseKeyFromSession(stripeSessionId), // Deterministic key based on session
     email,
     stripeSessionId,
     stripeCustomerId,

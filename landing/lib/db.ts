@@ -47,6 +47,13 @@ async function saveLicenses(licenses: Record<string, License>): Promise<void> {
  * Store a new license
  */
 export async function storeLicense(license: License): Promise<void> {
+  // Skip file operations on Vercel (read-only filesystem)
+  if (process.env.VERCEL) {
+    console.log('Skipping license storage on Vercel (read-only filesystem)');
+    console.log('License generated:', license.key, 'for', license.email);
+    return;
+  }
+
   const licenses = await loadLicenses();
   licenses[license.key] = license;
   await saveLicenses(licenses);
