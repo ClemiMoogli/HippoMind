@@ -22,7 +22,9 @@ Toute la documentation est organisée dans **[DOCUMENTATION_INDEX.md](./DOCUMENT
 
 - 🚀 [QUICK_START.md](./QUICK_START.md) - Reprise rapide
 - 📖 [PAYMENT_SYSTEM_DOCS.md](./PAYMENT_SYSTEM_DOCS.md) - Doc complète
-- 🗄️ [DATABASE_MIGRATION_GUIDE.md](./DATABASE_MIGRATION_GUIDE.md) - Migration BDD
+- 🗄️ **Migration BDD** (choisir une option) :
+  - [DATABASE_MIGRATION_GUIDE.md](./DATABASE_MIGRATION_GUIDE.md) - Vercel KV (Redis)
+  - [MONGODB_MIGRATION_GUIDE.md](./MONGODB_MIGRATION_GUIDE.md) - MongoDB Atlas
 - 📧 [EMAIL_SETUP_GUIDE.md](./EMAIL_SETUP_GUIDE.md) - Config emails
 - 📝 [COMMIT_CHANGES.md](./COMMIT_CHANGES.md) - Commiter les changements
 
@@ -76,7 +78,9 @@ Voir [BUILD_GUIDE.md](./BUILD_GUIDE.md) pour plus de détails.
 
 ## 🎯 Priorités actuelles (28 oct 2025)
 
-1. **🔴 Migrer vers BDD** - 30-45 min → [DATABASE_MIGRATION_GUIDE.md](./DATABASE_MIGRATION_GUIDE.md)
+1. **🔴 Migrer vers BDD** - Choisir une option :
+   - Vercel KV (30-45 min) → [DATABASE_MIGRATION_GUIDE.md](./DATABASE_MIGRATION_GUIDE.md)
+   - MongoDB (40-50 min) → [MONGODB_MIGRATION_GUIDE.md](./MONGODB_MIGRATION_GUIDE.md)
 2. **🔴 Setup emails** - 45-60 min → [EMAIL_SETUP_GUIDE.md](./EMAIL_SETUP_GUIDE.md)
 3. **🔴 Config webhook Stripe** - 15 min → [Stripe Dashboard](https://dashboard.stripe.com/webhooks)
 
