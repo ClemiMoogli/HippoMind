@@ -1,86 +1,58 @@
 /**
- * Simple in-memory database for licenses
- * In production, use Vercel KV, PostgreSQL, or another database
+ * MongoDB database operations for licenses
  */
 
+import { getDatabase } from './mongodb';
 import type { License } from './license';
-import fs from 'fs/promises';
-import path from 'path';
-
-const DB_FILE = path.join(process.cwd(), 'data', 'licenses.json');
+import { Collection } from 'mongodb';
 
 /**
- * Ensure data directory exists
+ * Get the licenses collection
  */
-async function ensureDataDir() {
-  const dataDir = path.join(process.cwd(), 'data');
-  try {
-    await fs.mkdir(dataDir, { recursive: true });
-  } catch {
-    // Directory already exists
-  }
-}
-
-/**
- * Load all licenses from file
- */
-async function loadLicenses(): Promise<Record<string, License>> {
-  try {
-    await ensureDataDir();
-    const data = await fs.readFile(DB_FILE, 'utf-8');
-    return JSON.parse(data);
-  } catch {
-    // File doesn't exist yet
-    return {};
-  }
-}
-
-/**
- * Save all licenses to file
- */
-async function saveLicenses(licenses: Record<string, License>): Promise<void> {
-  await ensureDataDir();
-  await fs.writeFile(DB_FILE, JSON.stringify(licenses, null, 2), 'utf-8');
+async function getLicensesCollection(): Promise<Collection<License>> {
+  const db = await getDatabase();
+  return db.collection<License>('licenses');
 }
 
 /**
  * Store a new license
  */
 export async function storeLicense(license: License): Promise<void> {
-  // Skip file operations on Vercel (read-only filesystem)
-  if (process.env.VERCEL) {
-    console.log('Skipping license storage on Vercel (read-only filesystem)');
-    console.log('License generated:', license.key, 'for', license.email);
-    return;
-  }
+  const collection = await getLicensesCollection();
 
-  const licenses = await loadLicenses();
-  licenses[license.key] = license;
-  await saveLicenses(licenses);
+  // Upsert pour éviter les doublons (au cas où le webhook se déclenche 2x)
+  await collection.updateOne(
+    { key: license.key },
+    { $set: license },
+    { upsert: true }
+  );
+
+  console.log('License stored in MongoDB:', license.key);
 }
 
 /**
  * Get license by key
  */
 export async function getLicense(key: string): Promise<License | null> {
-  const licenses = await loadLicenses();
-  return licenses[key] || null;
+  const collection = await getLicensesCollection();
+  return await collection.findOne({ key });
 }
 
 /**
  * Get license by Stripe session ID
  */
 export async function getLicenseBySession(sessionId: string): Promise<License | null> {
-  const licenses = await loadLicenses();
-  return Object.values(licenses).find(l => l.stripeSessionId === sessionId) || null;
+  const collection = await getLicensesCollection();
+  return await collection.findOne({ stripeSessionId: sessionId });
 }
 
 /**
  * Update license activation count
  */
 export async function incrementActivation(key: string): Promise<boolean> {
-  const licenses = await loadLicenses();
-  const license = licenses[key];
+  const collection = await getLicensesCollection();
+
+  const license = await getLicense(key);
 
   if (!license || !license.active) {
     return false;
@@ -90,23 +62,79 @@ export async function incrementActivation(key: string): Promise<boolean> {
     return false; // Max activations reached
   }
 
-  license.activations += 1;
-  await saveLicenses(licenses);
-  return true;
+  // Incrémenter atomiquement
+  const result = await collection.updateOne(
+    {
+      key,
+      active: true,
+      activations: { $lt: license.maxActivations }
+    },
+    { $inc: { activations: 1 } }
+  );
+
+  return result.modifiedCount > 0;
 }
 
 /**
  * Deactivate a license
  */
 export async function deactivateLicense(key: string): Promise<boolean> {
-  const licenses = await loadLicenses();
-  const license = licenses[key];
+  const collection = await getLicensesCollection();
 
-  if (!license) {
-    return false;
-  }
+  const result = await collection.updateOne(
+    { key },
+    { $set: { active: false } }
+  );
 
-  license.active = false;
-  await saveLicenses(licenses);
-  return true;
+  return result.modifiedCount > 0;
+}
+
+/**
+ * Get all license keys (for admin dashboard)
+ */
+export async function getAllLicenseKeys(): Promise<string[]> {
+  const collection = await getLicensesCollection();
+
+  const licenses = await collection
+    .find({}, { projection: { key: 1, _id: 0 } })
+    .toArray();
+
+  return licenses.map(l => l.key);
+}
+
+/**
+ * Get license statistics
+ */
+export async function getLicenseStats(): Promise<{
+  total: number;
+  active: number;
+  inactive: number;
+  totalActivations: number;
+}> {
+  const collection = await getLicensesCollection();
+
+  const result = await collection.aggregate([
+    {
+      $group: {
+        _id: null,
+        total: { $sum: 1 },
+        active: {
+          $sum: { $cond: ['$active', 1, 0] }
+        },
+        inactive: {
+          $sum: { $cond: ['$active', 0, 1] }
+        },
+        totalActivations: { $sum: '$activations' }
+      }
+    }
+  ]).toArray();
+
+  const stats = result[0] as { total: number; active: number; inactive: number; totalActivations: number } | undefined;
+
+  return stats || {
+    total: 0,
+    active: 0,
+    inactive: 0,
+    totalActivations: 0
+  };
 }
