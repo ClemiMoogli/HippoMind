@@ -5,7 +5,7 @@
 import type { License } from '@shared';
 
 // Your HippoMind API endpoint
-const API_URL = 'https://hippomind.org/api/verify-license';
+const API_URL = 'https://www.hippomind.org/api/verify-license';
 
 /**
  * Verify a license key with HippoMind API
