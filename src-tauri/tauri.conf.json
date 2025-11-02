@@ -1,6 +1,6 @@
 {
   "productName": "HippoMind",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "identifier": "com.hippomind.desktop",
   "build": {
     "beforeDevCommand": "cd packages/renderer && npm run dev",
